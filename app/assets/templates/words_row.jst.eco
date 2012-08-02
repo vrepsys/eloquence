@@ -1,0 +1,3 @@
+<td> <%= @word.get('wordstring') %></td>
+<td> <%- _.escape(@word.get('definition')).replace(new RegExp('\r?\n', 'g'), '<br />') %></td>
+<td> <button class='btn remove_word'>Remove</button>
