@@ -1,4 +1,4 @@
-class Eloquence.Collections.Words extends Backbone.Collection
+class app.collections.Words extends Backbone.Collection
 
   url: '/api/words'
-  model: Eloquence.Models.Word
+  model: app.models.Word

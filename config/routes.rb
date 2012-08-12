@@ -1,12 +1,23 @@
 Eloquence::Application.routes.draw do
   
+  devise_for :users, path: 'accounts'
+
   scope "api" do
-    resources :words
+    resources :words 
+    resources :users do
+      resources :words_lists
+    end
+    resources :words_lists do
+      resources :words
+    end
   end
 
-  get "main/index"
-
   root to: 'main#index'
+
+  match '*any' => 'main#index'
+
+  # '*' => 'main#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

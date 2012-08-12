@@ -1,0 +1,15 @@
+<div>
+<select id='words_lists' class='span4'>
+  <% for wordsList in @collection.models: %>
+    <option value=<%=wordsList.get('id')%>><%=wordsList.get('name')%></option>
+  <% end %>
+</select>
+<input type='text' id='new_list_name'/>
+<button id='add_list' class='btn'> Add New List </button>
+</div>
+<div class="well">
+  <input type='text' id='new_word_text'/>
+  <textarea style='width: 400px; height: 120px' id='definition_text'/>
+  <button id='add_word' class='btn btn-primary'>Add</button> 
+</div>
+<div id='words_table'/>

@@ -1,0 +1,6 @@
+<form class='well form-vertical span3'>
+  <input id='email' type="text" class="span12" placeholder="Email">
+  <input id='password' type="password" class="span12" placeholder="Password">
+  <button id='sign_in' class="btn btn-primary">Sign in</button>
+  <button id='sign_up' class="btn">Sign up</button>
+</form>

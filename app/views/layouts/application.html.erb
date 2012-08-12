@@ -20,23 +20,21 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
           <a class="brand" href="#">Eloquence</a>
           <div class="container nav-collapse">
+            <!--
             <ul class="nav">
               <li><%= link_to "Link1", "/path1"  %></li>
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
-          </div><!--/.nav-collapse -->
+            -->
+            <div id="nav_right" />
+        </div>
+          </div>
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="content">
         <div class="row">
@@ -47,7 +45,7 @@
       </div><!--/content-->
 
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; Eloquence 2012</p>
       </footer>
 
     </div> <!-- /container -->
@@ -56,6 +54,16 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
+
+    <script type="text/javascript">
+       $(document).ready(function() {
+         <% if signed_in? -%>
+           app.start(new app.models.UserSession(<%= current_user.to_json.html_safe %>));
+         <% else -%>
+           app.start()
+         <% end -%>
+       });
+    </script>
 
   </body>
 </html>

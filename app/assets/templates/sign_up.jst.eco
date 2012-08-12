@@ -1,0 +1,6 @@
+<div class='well form-vertical span3'>
+  <input id="email" name="email" type="email" required="required" placeholder="Email"/>
+  <input id="password" name="password" type="password" required="required" placeholder="Password"/>
+  <input id="password_confirmation" name="password_confirmation" type="password" required="required" placeholder="Password"/>
+  <input id="sign_up"type="button" value="Sign up" class="btn btn-primary" />
+</div>

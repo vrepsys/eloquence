@@ -1,1 +1,1 @@
-class Eloquence.Models.Word extends Backbone.Model
+class app.models.Word extends Backbone.Model

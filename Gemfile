@@ -23,16 +23,17 @@ group :assets do
   gem 'twitter-bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'eco'
 gem 'jquery-rails'
-gem 'backbone-on-rails'
+gem 'rails-backbone'
 gem 'wordnik'
 
 gem 'thin'
 gem 'quiet_assets', :group => :development
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

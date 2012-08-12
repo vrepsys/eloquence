@@ -1,12 +1,28 @@
-class Eloquence.Routers.AppRouter extends Backbone.Router
+class app.AppRouter extends Backbone.Router
 
   routes:
     '': 'index'
+    'words': 'words'
+    'signin' : 'signin'
+    'signup' : 'signup'
 
   index: ->
-    @wordsList = new Eloquence.Collections.Words()
-    @wordsList.fetch
+    if app.currentUser
+      this.navigate 'words', trigger: true
+    else
+      this.navigate 'signin', trigger: true
+
+  words: ->
+    @wordsLists = new app.collections.WordsLists()
+    @wordsLists.fetch
       success: =>
-        view = new Eloquence.Views.WordsList(collection : @wordsList)
+        view = new app.views.WordsIndex(collection : @wordsLists)
         $('#container').html(view.render().el)
 
+  signin: ->
+    view = new app.views.SignIn()
+    $('#container').html(view.render().el)
+
+  signup: ->
+    view = new app.views.SignUp()
+    $('#container').html(view.render().el)

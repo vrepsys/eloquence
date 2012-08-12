@@ -1,8 +1,8 @@
-class Eloquence.Views.WordsRow extends Backbone.View
+class app.views.WordsTableRow extends Backbone.View
   
   tagName: 'tr'
 
-  template: JST['words_row']
+  template: JST['words_tbl_row']
 
   events:
     'click .remove_word' : 'removeWord'

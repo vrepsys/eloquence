@@ -3,7 +3,7 @@ class WordsController < ApplicationController
   respond_to :json
   
   def index
-    respond_with Word.all
+    respond_with WordsList.find(params[:words_list_id]).words
   end
   
   def show
@@ -11,7 +11,7 @@ class WordsController < ApplicationController
   end
   
   def create
-    respond_with Word.create(params[:word])
+    respond_with Word.create(params[:word].merge({'words_list_id' => params['words_list_id']}))
   end
   
   def update
