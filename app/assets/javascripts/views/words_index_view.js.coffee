@@ -16,7 +16,6 @@ class app.views.WordsIndex extends Backbone.View
     @refreshWordsTable()
 
   onNewListAdded: (wordsList) ->
-    alert wordsList.toJSON()
     $('#words_lists').prepend(
         $('<option></option>').val(wordsList.get('id')).html(wordsList.get('name'))
         )
@@ -33,6 +32,7 @@ class app.views.WordsIndex extends Backbone.View
 
   addList: ->
     @collection.create {name: $('#new_list_name').val()}, wait: true
+    $('#new_list_name').val('')
 
   render: ->
     $(@el).html(@template(collection: @collection))
