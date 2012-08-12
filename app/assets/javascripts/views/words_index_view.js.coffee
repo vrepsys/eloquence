@@ -17,7 +17,7 @@ class app.views.WordsIndex extends Backbone.View
 
   onNewListAdded: (wordsList) ->
     $('#words_lists').prepend(
-        $('<option></option>').val(wordsList.get('id')).html(wordsList.get('name'))
+        $('<option></option>').val(wordsList.get('id')).html(_.escape(wordsList.get('name')))
         )
     $('#words_lists').val(0)
     @handleListChange()
